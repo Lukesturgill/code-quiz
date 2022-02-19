@@ -62,4 +62,14 @@ body {
     display: none;
 }
 
+.timer {
+    display: flex;
+}
 
+.time-remaining {
+    
+}
+
+.time-over {
+    display: hide;
+}

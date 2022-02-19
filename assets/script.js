@@ -4,6 +4,23 @@ const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
 
+var timer = document.getElementById("timer");
+var timeLeft = document.getElementById("timeLeft");
+var timesUp = document.getElementById("timesUp");
+ 
+var highScoreSection = document.getElementById("highScoreSection");
+var finalScore = document.getElementById("finalScore");
+var goBackBtn = document.getElementById("goBackBtn");
+var clearHighScoreBtn = document.getElementById("clearHighScoreBtn"); 
+
+var viewHighScore = document.getElementById("viewHighScore");
+var listOfHighScores = document.getElementById("listOfHighScores");
+
+var correctAns = 0;
+var questionNum = 0;
+var scoreResult;
+var questionIndex = 0;
+
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", startGame)
@@ -12,11 +29,22 @@ nextButton.addEventListener("click", () => {
     setNextQuestion()
 })
 
+var totalTime = 151;
 function startGame() {
     startButton.classList.add("hide")
     shuffledQuestions = question.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
+    var startTimer = setInterval(function() {
+        totalTime--;
+        timeLeft.textContent = totalTime;
+        if(totalTime <= 0) {
+            clearInterval(startTimer);
+            if (questionIndex < question.length - 1) {
+                gameOver();
+            }
+        }
+    },1000);
     setNextQuestion()
 }
 
@@ -41,7 +69,7 @@ function showQuestion(question) {
 
 function resetState() {
     nextButton.classList.add("hide")
-    while(answerButtonsElement.firstChild) {
+    while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
         (answerButtonsElement.firstChild)
     }
@@ -63,7 +91,7 @@ function selectAnswer(e) {
     nextButton.classList.remove("hide")
 }
 
-var question = [
+const question = [
     {
         question: 'Is web development fun?',
         answers: [
