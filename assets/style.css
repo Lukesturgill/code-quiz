@@ -8,12 +8,19 @@
 body {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     display: flex;
-    background-color: rgb(30, 118, 201);
-    width: 100vw;
-    height: 100vw;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(30, 118, 201);
+}
+
+.header{
+    display: flex;
+    flex-direction: column; 
+    padding: 45px;
+    margin: 45px;
 }
 
 .container {
@@ -21,7 +28,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
@@ -29,10 +35,10 @@ body {
 }
 
 .btn-grid {
-    display: grid;
+   /* display: grid;*/
     margin: 20px 0;
 }
-/*gap: 10px  grid-template-columns: repeat(2, auto)*/
+
 
 .btn {
     border: 1px solid hsl(#4ba7fd, 100%, 30%);
@@ -52,6 +58,8 @@ body {
     padding: 10px 20px;
 }
 
+
+
 .controls {
     display: flex;
     justify-content: center;
@@ -66,10 +74,6 @@ body {
     display: flex;
 }
 
-.time-remaining {
-    
-}
-
-.time-over {
-    display: hide;
+#timesUp {
+    display:none;
 }

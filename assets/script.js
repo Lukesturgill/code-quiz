@@ -29,7 +29,7 @@ nextButton.addEventListener("click", () => {
     setNextQuestion()
 })
 
-var totalTime = 151;
+var totalTime = 45;
 function startGame() {
     startButton.classList.add("hide")
     shuffledQuestions = question.sort(() => Math.random() - .5)
@@ -93,19 +93,39 @@ function selectAnswer(e) {
 
 const question = [
     {
-        question: 'Is web development fun?',
+        question: 'What does HTML stand for?',
         answers: [
-          { text: 'Kinda', correct: false },
-          { text: 'YES!!!', correct: true },
-          { text: 'Um no', correct: false },
-          { text: 'IDK', correct: false }
+          { text: 'Hypertype Markup Language', correct: false },
+          { text: 'Hypertext Markup Language', correct: true },
+          { text: 'Home Text Markup Language', correct: false },
+          { text: 'How To Make Lasagna', correct: false }
         ]
       },
       {
-        question: 'What is 4 * 2?',
+        question: 'What year did JavaScrpit come out?',
         answers: [
-          { text: '6', correct: false },
-          { text: '8', correct: true }
+          { text: '1985', correct: false },
+          { text: '1999', correct: false },
+          { text: '2008', correct: false },
+          { text: '1995', correct: true }
+        ]
+      },
+      {
+        question: 'Who created JavaScript?',
+        answers: [
+          { text: 'Brendan Eich', correct: true },
+          { text: 'Bill Gates', correct: false },
+          { text: 'Elon Musk', correct: false },
+          { text: 'Steve Jobs', correct: false }
+        ]
+      },
+      {
+        question: 'What is node.js an example of?',
+        answers: [
+          { text: 'An API', correct: false },
+          { text: 'A server-side JavaScript', correct: true },
+          { text: 'A Front-End Development software', correct: false },
+          { text: 'A CSS Framework', correct: false }
         ]
       }
 ]
