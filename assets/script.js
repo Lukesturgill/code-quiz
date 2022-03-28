@@ -3,23 +3,11 @@ const nextButton = document.getElementById("next-btn")
 const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answer-buttons")
+const openQuestion = document.getElementById("openQues")
 
 var timer = document.getElementById("timer");
 var timeLeft = document.getElementById("timeLeft");
 var timesUp = document.getElementById("timesUp");
- 
-var highScoreSection = document.getElementById("highScoreSection");
-var finalScore = document.getElementById("finalScore");
-var goBackBtn = document.getElementById("goBackBtn");
-var clearHighScoreBtn = document.getElementById("clearHighScoreBtn"); 
-
-var viewHighScore = document.getElementById("viewHighScore");
-var listOfHighScores = document.getElementById("listOfHighScores");
-
-var correctAns = 0;
-var questionNum = 0;
-var scoreResult;
-var questionIndex = 0;
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -32,6 +20,7 @@ nextButton.addEventListener("click", () => {
 var totalTime = 45;
 function startGame() {
     startButton.classList.add("hide")
+    openQuestion.classList.add("hide")
     shuffledQuestions = question.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
@@ -66,7 +55,7 @@ function showQuestion(question) {
       answerButtonsElement.appendChild(button)
     })
   }
-
+  
 function resetState() {
     nextButton.classList.add("hide")
     while (answerButtonsElement.firstChild) {

@@ -11,12 +11,12 @@
     
     <section class=header>
       <header id="timer" class="timer">
-        Time Remaining: <span id="timeLeft" class="time-remaining">0</span>
+        <h4>Time Remaining: <span id="timeLeft" class="time-remaining">0</span></h4>
         <div id="timesUp" class="time-over">Time's Up!</div>
       </header>
     </section>
 
-    <section class="container">
+    <section class="container"><h1 id="openQues" class="start-btn btn">Test your knowledge about coding!</h1>
        <div>
            <div id="question-container" class="hide">
                 <div id="question">Question</div>
@@ -34,6 +34,13 @@
         </div>
     </section>
 
+    <div class="hide" id="correct">
+      <h2>Correct!</h2>
+      </div>
+      <div class="hide" id="wrong">
+      <h2>Wrong</h2>
+      </div>
+      
     <script src="assets/script.js"></script> 
   </body>
 </html>
